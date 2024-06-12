@@ -160,6 +160,10 @@ trait InitMeeting
 
         $meetingParams->setFreeJoin($request->get('freeJoin', false));
 
+        $meetingParams->setMeetingExpireIfNoUserJoinedInMinutes(
+            $request->get('meetingExpireIfNoUserJoinedInMinutes', config('bigbluebutton.create.meetingExpireIfNoUserJoinedInMinutes', 15))
+        );
+
         $presentation = (array) $request->get('presentation', null);
         foreach ($presentation as $item) {
             if (isset($item['fileName']) && ! empty($item['fileName'])) {
