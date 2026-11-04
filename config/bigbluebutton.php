@@ -334,6 +334,9 @@ return [
          * var @integer
          */
         'userCameraCap' => 3,
+
+        /* Automatically end meeting if no user joined within a period of time after meeting created. */
+        'meetingExpireIfNoUserJoinedInMinutes' => 15,
     ],
     'join' => [
         /**
